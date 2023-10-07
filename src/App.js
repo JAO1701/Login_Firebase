@@ -5,7 +5,7 @@ import LoginForm from './Componentes/LoginForm';
 function App() {
   return (
     <div className="App">
-      {/* Agrega el componente LoginForm aquí */}
+      {/* Renderiza el componente LoginForm dentro del elemento con clase "App" */}
       <LoginForm />
     </div>
   );

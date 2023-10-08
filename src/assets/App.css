@@ -1,15 +1,7 @@
-/* Estilo para centrar el formulario en el medio de la pantalla */
-
-/* Hace que el body no tenga margen y evita el desbordamiento del video */
+/* Elimina el margen del body y evita el desbordamiento del video */
 body {
   margin: 0;
   overflow: hidden; /* Evita el desbordamiento del video */
-}
-
-/* Define un contenedor principal con una altura mínima igual a la altura de la ventana (viewport height) */
-#main {
-  min-height: 100vh;
-  position: relative;
 }
 
 /* Estilo para el elemento de video */
@@ -19,19 +11,83 @@ video {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /*Escala el vídeo para cubrir completamente su contenedor*/
   z-index: -1; /* Coloca el video detrás de otros elementos */
 }
 
-/* Estilo para el contenedor del formulario de inicio de sesión */
-.login-form-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Centra horizontal y verticalmente */
-  background-color: rgba(17, 64, 143, 0.6); /* Fondo del formulario con transparencia */
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra para el formulario */
-  z-index: 1; /* Coloca el formulario delante del video */
+.login-container {
+  margin-top: 50px;
+  text-align: center;
+
+  background: rgba(23, 83, 214, 0.411); /* Fondo blanco con opacidad */
+  
+  border-radius: 10px; /* Borde redondeado para suavizar los bordes */
+  padding: 20px; /* Espaciado interior */
 }
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: azure;
+  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: azure;
+  text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+}
+
+Form {
+  margin-top: 20px;
+
+}
+
+/* Estilos para inputs */
+.form-control-lg {
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Espacio vertical entre los campos */
+  max-width: 400px; /* Ancho máximo */
+  box-sizing: border-box; /* Incluye el padding y el borde en el cálculo del ancho */
+}
+
+
+FormGroup {
+  margin-bottom: 20px;
+}
+
+Label {
+  font-size: 1.2rem;
+}
+
+Input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+Button {
+  background-color: #007bff;
+  color: #fff;
+  margin-top: 15px;
+  font-size: 1rem; /* Cambia a rem para hacerlo más escalable */
+  padding: 0.75rem 1.5rem; /* Cambia a rem para hacerlo más escalable */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+Button:hover {
+  background-color: #0056b3;
+}
+
+
+

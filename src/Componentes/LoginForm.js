@@ -1,73 +1,71 @@
 import React, { useState } from 'react';
-import { Form, Input, Button } from 'reactstrap';
+import { Container, Row, Col, Form, FormGroup, Input, Button } from 'reactstrap';
+import '../assets/App.css'; // Importa los estilos CSS
 
-const LoginForm = () => {
-  // Definición de estados para el nombre de usuario y la contraseña
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showError, setShowError] = useState(false); // Estado para mostrar u ocultar el mensaje de error
 
-  // Función que maneja el envío del formulario
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    // Lógica de inicio de sesión aquí (debe implementarse)
+
+    // Validación de campos requeridos
+    if (!username || !password) {
+      setShowError(true); // Muestra el mensaje de error si algún campo está vacío
+      return;
+    }
+
+    // Lógica de inicio de sesión
+    console.log('Nombre de usuario:', username);
+    console.log('Contraseña:', password);
   };
 
   return (
-    <div className="login-form-container">
-      <Form className="login-form" onSubmit={handleSubmit}>
-        <h1 className="mb-4">Data Evolution Pro</h1>
-        <h2 className="mb-4">Iniciar Sesión</h2>
-
-        {/* Campo de entrada para el nombre de usuario */}
-        <div className="form-group mb-3">
-          <Input
-            type="text"
-            placeholder="Nombre de Usuario"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            style={{
-              border: '1px solid #ccc',
-              padding: '10px',
-              marginBottom: '10px',
-              borderRadius: 4,
-            }}
-          />
-        </div>
-
-        {/* Campo de entrada para la contraseña */}
-        <div className="form-group mb-3">
-          <Input
-            type="password"
-            placeholder="Contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            style={{
-              border: '1px solid #ccc',
-              padding: '10px',
-              marginBottom: '10px',
-              borderRadius: 4,
-            }}
-          />
-        </div>
-
-        {/* Botón de inicio de sesión */}
-        <Button
-          color="primary"
-          className="w-100"
-          style={{
-            borderRadius: 4,
-            backgroundColor: '#007bff',
-            color: '#fff',
-            cursor: 'pointer',
-          }}
-        >
-          Iniciar Sesión
-        </Button>
-      </Form>
-    </div>
+    <Container className="login-container">
+      <Row>
+        <Col xs="12" lg="6" className="mx-auto">
+          <h1 className="display-3">Data Evolution Pro</h1>
+          <h2 className="h3">Iniciar sesión</h2>
+          <Form onSubmit={handleLogin}>
+            <FormGroup>
+              <Input
+                type="text"
+                name="username"
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Nombre de usuario"
+                className={`form-control-lg ${showError && !username && 'is-invalid'}`}
+                required
+              />
+              {showError && !username && (
+                <div className="invalid-feedback">Este campo debe completarse</div>
+              )}
+            </FormGroup>
+            <FormGroup>
+              <Input
+                type="password"
+                name="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Contraseña"
+                className={`form-control-lg ${showError && !password && 'is-invalid'}`}
+                required
+              />
+              {showError && !password && (
+                <div className="invalid-feedback">Este campo debe completarse</div>
+              )}
+            </FormGroup>
+            <Button type="submit" color="primary" className="btn-lg">
+              Iniciar sesión
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
-export default LoginForm;
+export default Login;

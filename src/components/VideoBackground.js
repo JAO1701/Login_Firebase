@@ -17,7 +17,7 @@ const VideoBackground = () => {
     zIndex: -1,            // Coloca el video detrás de otros elementos de la página
   }}
 >
-  <source src="./assets/Videos/Background.mp4" type="video/mp4" /></video>// Ruta del video en formato mp4
+<source src="./assets/Videos/Background.mp4" type="video/mp4" /></video>// Ruta del video en formato mp4
 
 
 

@@ -1,26 +1,4 @@
-# Data Evolution Pro
-### `npx create-react-app data-evolution-pro`
-### `npm start`
+Este proyecto presenta una solución de autenticación de usuarios robusta y fácil de integrar, construida con tecnologías web modernas y eficientes. Se ofrece una experiencia de usuario fluida y segura a través de funcionalidades esenciales como el registro de nuevos usuarios, el inicio de sesión seguro, la validación de información y un sistema de recuperación de contraseñas basado en correo electrónico.
+Esta Desarrollado con React para una interfaz de usuario dinámica y reactiva, la estética y la responsividad se han optimizado mediante Tailwind, lo que garantiza una presentación atractiva y adaptable a diferentes dispositivos. La gestión de la autenticación y los datos de usuario se delega a la plataforma Firebase de Google, aprovechando su infraestructura escalable y sus servicios de autenticación seguros.
+Este login básico proporciona una base sólida y confiable para la gestión de usuarios en cualquier aplicación web, combinando una interfaz intuitiva con un backend potente y seguro.
 
-### `npm install -D tailwindcss`
-### `npx tailwindcss init`
-
-### `npm i firebase`
-
-### `npm i react-router-dom`
-
-
-Errores de Firebase:
--[Link 1](https://firebase.google.com/docs/auth/admin/errors?hl=es-419).
--[Link 2](https://gist.github.com/eduardolat/f666d3f9319abe61ccf29573b90d08c0).
-
-
-
-Hostado en: [GitHub](https://github.com/JAO1701/DataEvolutionPro).
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-* RGB 20, 101, 187 HEX #1465bb
-* code formatting Shift + Alt + F
-* atajo "rfce"
